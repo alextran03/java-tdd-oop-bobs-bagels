@@ -13,9 +13,17 @@ public class Bagel extends Item{
     public void addFilling(Filling filling) {
         this.fillings.add(filling);
     }
-    
-      public List<Filling> getFillings() {
+
+    public List<Filling> getFillings() {
       return this.fillings;
-  }
-    
+    }
+
+    @Override
+    public double getPrice() {
+        double total = super.getPrice();
+        for(Filling filling : this.fillings) {
+            total += filling.getPrice();
+        }
+        return total;
+    }
 }

@@ -8,10 +8,10 @@ public abstract class Item {
         UNKOWN
     }
 
-    String name;
-    double price;
-    String variant;
-    SKU sku;
+    private String name;
+    private double price;
+    private String variant;
+    private SKU sku;
 
     public Item(String name, double price, String variant, SKU sku) {
         this.name = name;
@@ -34,5 +34,6 @@ public abstract class Item {
 
     public SKU getSKU() {
         return this.sku;
-    }   
+    }
+
 }

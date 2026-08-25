@@ -50,6 +50,17 @@ public class Basket {
         return total;
     }
 
+    public boolean isInBasket(String sku){
+        for (Item item : this.items) {
+            if (item.getSKU().name().equals(sku)) {
+                return true;
+            }
+        }
+        return false; 
+    }
+
+    
+
     public int getSize() {
         return this.items.size();
     }

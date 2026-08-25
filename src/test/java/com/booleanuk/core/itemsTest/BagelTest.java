@@ -19,5 +19,15 @@ public class BagelTest {
         assertEquals(1, bagel.getFillings().size());
 
     }
+
+    @Test
+    public void bagelPriceIncludesFillingCost() {
+        Bagel bagel = new Bagel ("Plain Bagel", SKU.BGLP, 0.39, "Plain");
+        Filling filling = new Filling("Filling", SKU.FILB, 0.12, "Bacon");
+
+        bagel.addFilling(filling);
+
+        assertEquals(0.51, bagel.getPrice(), 0.001);
+    }
     
 }

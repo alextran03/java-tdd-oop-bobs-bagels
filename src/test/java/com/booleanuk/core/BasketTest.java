@@ -87,4 +87,19 @@ public class BasketTest {
 
         assertEquals(1, basket.getSize());
     }
+
+    @Test
+    public void isInBasketReturnsTrueWhenItemIsInBasket() {
+        Basket basket = new Basket(inventory);
+
+        basket.addItem(bagel1);
+
+        assertEquals(true, basket.isInBasket(SKU.BGLP.name()));
+    }
+
+    @Test
+    public void isInBasketReturnsFalseWhenItemIsNotInBasket() {
+        Basket basket = new Basket(inventory);
+        assertEquals(false, basket.isInBasket(SKU.BGLP.name()));
+    }
 }
